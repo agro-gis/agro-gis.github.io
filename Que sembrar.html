@@ -5,6 +5,19 @@
 		<link rel="stylesheet" href="fonts.css">
 		<link rel="shortcut icon" type="image/x-icon" href="Imagenes/logocopia.ico"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript" src="jspdf.js"></script>
+		<script type = "text/javascript">
+		
+		function genPDF(){
+			var doc = new jsPDF();
+			
+			doc.text(20,20,'TEST Message!!');
+			doc.addPage();
+			doc.text(20,20,'TEST Page 2!');
+			doc.save('Test.pdf');
+		}
+		
+		</script>
 		<style>
 			body { background-image: url("http://agro-100.ca/wp-content/uploads/2015/10/mais.jpg");
 			background-repeat: no-repeat;  
@@ -185,7 +198,8 @@
 				</select>
 			</center>
 		</body>
-		<button type="button" name="Generar Informe">Generar Informe</button>
+		<a href="javascript:genPDF()">Dowload PDF</a>
+		<button type="button" name="Generar Informe" onclick='genPDF()'>Generar Informe</button>
 			</div>
 
 
